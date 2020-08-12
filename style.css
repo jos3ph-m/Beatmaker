@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Recursive&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+option,
+select {
+  font-family: "Recursive", sans-serif;
+}
+
+i,
+svg {
+  pointer-events: none;
+}
+
+.kick-pad,
+.snare-pad,
+.tom-pad {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.kick-pad {
+  background-color: rgb(48, 79, 114);
+}
+
+.snare-pad {
+  background-color: rgb(129, 63, 43);
+}
+
+.tom-pad {
+  background-color: rgb(60, 95, 65);
+}
+
+.kick-pad.active {
+  background-color: rgb(5, 32, 63);
+}
+
+.snare-pad.active {
+  background-color: rgb(54, 18, 6);
+}
+
+.tom-pad.active {
+  background-color: rgb(4, 37, 9);
+}
+
+.sequencer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.kick-track,
+.snare-track,
+.tom-track {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.kick,
+.snare,
+.tom {
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin: 0rem 2rem;
+}
+
+.controls button {
+  padding: 1rem;
+  border: none;
+  background: rgb(43, 43, 43);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 3px;
+}
+
+.pad {
+  transition: all 0.5s ease;
+}
+
+.play {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background: rgb(43, 43, 43);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 3rem;
+  border-radius: 3px;
+}
+
+select {
+  padding: 1.2rem;
+  font-size: 0.8rem;
+  border: 2px solid black;
+}
