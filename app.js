@@ -5,16 +5,18 @@ class DrumKit {
     this.snareAudio = document.querySelector(".snare-sound");
     this.tomAudio = document.querySelector(".tom-sound");
     this.index = 0;
+    this.bpm = 150;
   }
   repeat() {
     let step = this.index % 8;
-    console.log(step);
+    const activeBars = document.querySelectorAll(`.b${step}`);
     this.index++;
   }
   start() {
+    const interval = (60 / this.bpm) * 1000;
     setInterval(() => {
       this.repeat();
-    }, 1000);
+    }, interval);
   }
 }
 
