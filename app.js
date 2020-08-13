@@ -1,11 +1,15 @@
 class DrumKit {
   constructor() {
     this.pads = document.querySelectorAll(".pad");
+    this.playBtn = document.querySelector(".play");
     this.kickAudio = document.querySelector(".kick-sound");
     this.snareAudio = document.querySelector(".snare-sound");
     this.tomAudio = document.querySelector(".tom-sound");
     this.index = 0;
     this.bpm = 150;
+  }
+  activePad() {
+    this.classList.toggle("active");
   }
   repeat() {
     let step = this.index % 8;
@@ -22,4 +26,10 @@ class DrumKit {
 
 const drumKit = new DrumKit();
 
-drumKit.start();
+drumKit.pads.forEach((pad) => {
+  pad.addEventListener("click", drumKit.activePad);
+});
+
+drumKit.playBtn.addEventListener("click", function () {
+  drumKit.start();
+});
