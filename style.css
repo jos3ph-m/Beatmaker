@@ -115,3 +115,12 @@ select {
   border: 2px solid black;
   border-radius: 3px;
 }
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
