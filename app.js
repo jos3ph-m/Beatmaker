@@ -40,16 +40,18 @@ class DrumKit {
   start() {
     const interval = (60 / this.bpm) * 1000;
     // Check if playing
-    if (!this.isPlaying) {
-      this.playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
-      this.isPlaying = setInterval(() => {
-        this.repeat();
-      }, interval);
-    } else {
+    if (this.isPlaying) {
       // Clear interval
       clearInterval(this.isPlaying);
       this.playBtn.innerHTML = `<i class="fas fa-play"></i>`;
+      this.playBtn.classList.remove("active");
       this.isPlaying = null;
+    } else {
+      this.playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
+      this.playBtn.classList.add("active");
+      this.isPlaying = setInterval(() => {
+        this.repeat();
+      }, interval);
     }
   }
 }
