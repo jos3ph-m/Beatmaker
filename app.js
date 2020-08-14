@@ -7,6 +7,7 @@ class DrumKit {
     this.tomAudio = document.querySelector(".tom-sound");
     this.index = 0;
     this.bpm = 300;
+    this.isPlaying = null;
   }
   activePad() {
     this.classList.toggle("active");
@@ -38,9 +39,18 @@ class DrumKit {
   }
   start() {
     const interval = (60 / this.bpm) * 1000;
-    setInterval(() => {
-      this.repeat();
-    }, interval);
+    // Check if playing
+    if (!this.isPlaying) {
+      this.playBtn.innerHTML = `<i class="fas fa-pause"></i>`;
+      this.isPlaying = setInterval(() => {
+        this.repeat();
+      }, interval);
+    } else {
+      // Clear interval
+      clearInterval(this.isPlaying);
+      this.playBtn.innerHTML = `<i class="fas fa-play"></i>`;
+      this.isPlaying = null;
+    }
   }
 }
 
