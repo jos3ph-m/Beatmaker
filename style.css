@@ -116,6 +116,10 @@ select {
   border-radius: 3px;
 }
 
+.mute.active {
+  background-color: rgb(201, 201, 201);
+}
+
 @keyframes playTrack {
   from {
     transform: scale(1);
