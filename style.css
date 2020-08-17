@@ -120,6 +120,32 @@ select {
   background-color: rgb(201, 201, 201);
 }
 
+.tempo {
+  margin: 3rem;
+  width: 30%;
+}
+.tempo-slider {
+  padding: 0.2rem;
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  background: rgb(201, 201, 201);
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.tempo-slider:active,
+.tempo-slider:focus,
+.mute:active,
+.mute:focus {
+  outline: none;
+}
+.tempo p {
+  font-size: 1.5rem;
+  margin: 5rem;
+  text-align: center;
+}
+
 @keyframes playTrack {
   from {
     transform: scale(1);
